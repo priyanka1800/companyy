@@ -1,0 +1,453 @@
+/* --- General Setup & Variables --- */
+:root {
+    --primary-color: #FF4667;
+    --dark-text: #0F0F0F;
+    --body-text: #4F4F4F;
+    --background-pink: #FFF5F6;
+    --white: #FFFFFF;
+    --border-color: #EAEAEA;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--body-text);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(255, 70, 103, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 70, 103, 0.4);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* --- Header & Navigation --- */
+.header {
+    background: var(--white);
+    padding: 20px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 36px;
+}
+
+.nav-links-desktop,
+.btn-nav-quote {
+    display: none;
+}
+
+.mobile-nav-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mobile-nav-toggle p {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: right;
+    color: var(--primary-color);
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger-bar {
+    width: 24px;
+    height: 3px;
+    background-color: var(--dark-text);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+}
+
+/* --- Mobile Nav Panel --- */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--white);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.close-btn {
+    font-size: 32px;
+    font-weight: 300;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mobile-nav-links li {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-nav-links a {
+    color: var(--dark-text);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.btn-mobile-contact {
+    margin-top: auto;
+    width: 100%;
+}
+
+
+/* --- Hero Section --- */
+.hero {
+    background-color: var(--background-pink);
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+.hero > .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--dark-text);
+    margin-bottom: 16px;
+}
+
+.hero-title span {
+    color: var(--primary-color);
+}
+
+.hero-description {
+    font-size: 14px;
+    margin-bottom: 32px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.hero-image-container {
+    position: relative;
+    max-width: 300px;
+}
+
+.info-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.info-card strong {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark-text);
+}
+
+.info-card p {
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.card-rating {
+    bottom: 20%;
+    left: -20px;
+}
+
+.stars {
+    color: #FFC700;
+    font-size: 18px;
+    letter-spacing: -2px;
+}
+
+.card-resumes {
+    top: 25%;
+    right: -25px;
+}
+
+/* --- Features Section --- */
+.features {
+    padding: 60px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.tag {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dark-text);
+    line-height: 1.3;
+}
+
+.section-title span {
+    color: var(--primary-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.feature-card {
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+}
+
+.feature-icon {
+    margin: 0 auto 16px auto;
+    width: 64px;
+    height: 64px;
+}
+
+.feature-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 8px;
+}
+
+.feature-description {
+    font-size: 14px;
+}
+
+/* --- Desktop Styles (1024px and up) --- */
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 40px;
+    }
+
+    /* Desktop Navigation */
+    .mobile-nav-toggle {
+        display: none;
+    }
+    .mobile-nav {
+        display: none;
+    }
+    .nav-links-desktop {
+        display: flex;
+        gap: 40px;
+    }
+    .nav-links-desktop a {
+        color: var(--dark-text);
+        font-weight: 500;
+        position: relative;
+    }
+    .nav-links-desktop a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: var(--primary-color);
+        transition: width 0.3s ease;
+    }
+    .nav-links-desktop a:hover::after {
+        width: 100%;
+    }
+    .btn-nav-quote {
+        display: inline-block;
+        padding: 10px 20px;
+        border: 1px solid var(--primary-color);
+        color: var(--primary-color);
+    }
+     .btn-nav-quote:hover {
+        background-color: var(--primary-color);
+        color: var(--white);
+    }
+
+    /* Desktop Hero */
+    .hero {
+        padding-top: 60px;
+    }
+     .hero > .container {
+        flex-direction: row;
+        align-items: center;
+        gap: 60px;
+        position: relative;
+    }
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        left: -150px;
+        width: 700px;
+        height: 700px;
+        background-color: var(--white);
+        border-radius: 50%;
+        z-index: 0;
+    }
+     .hero-content, .hero-image-container {
+        position: relative;
+        z-index: 1;
+    }
+     .hero-content {
+        flex: 1;
+        text-align: left;
+    }
+    .hero-title {
+        font-size: 56px;
+    }
+    .hero-description {
+        font-size: 16px;
+        max-width: 480px;
+    }
+    .hero-buttons {
+        justify-content: flex-start;
+    }
+     .hero-image-container {
+        flex: 0 0 45%;
+        max-width: 45%;
+    }
+    .info-card {
+        padding: 16px 24px;
+    }
+    .card-rating {
+        bottom: 25%;
+        left: -50px;
+    }
+    .card-resumes {
+        top: 30%;
+        right: -40px;
+    }
+    .info-card p {
+        font-size: 14px;
+    }
+     .info-card strong {
+        font-size: 24px;
+    }
+    
+    /* Desktop Features */
+    .features {
+        padding: 100px 0;
+    }
+    .section-header {
+        margin-bottom: 60px;
+    }
+    .section-title {
+        font-size: 40px;
+    }
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+    }
+    .feature-card {
+        text-align: left;
+    }
+    .feature-icon {
+        margin: 0 0 24px 0;
+    }
+}
